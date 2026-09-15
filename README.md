@@ -56,6 +56,25 @@ cp .env.example .env
 
 ## Usage
 
+### Web app (recommended for end users)
+
+```bash
+python app.py
+```
+
+This opens a browser tab with two tabs:
+
+- **Manage Documents** — drag and drop PDF/Markdown/text files, click "Add to
+  knowledge base", see a live count of what's indexed.
+- **Ask Questions** — a chat box; answers list which document(s) they came
+  from.
+
+No command line needed after that first `python app.py` — it's meant for
+non-technical users. The knowledge base persists between runs (same
+`./data/chroma` folder as the CLI), so documents only need to be added once.
+
+### Command line (for scripting/automation)
+
 ```bash
 # Ingest a file or a directory of PDFs/Markdown/text
 python scripts/ingest.py data/sample_docs
@@ -137,6 +156,7 @@ server. Coverage includes:
 ## Project layout
 
 ```
+app.py           # Gradio web app (recommended entry point for end users)
 src/rag/
   core/          # pydantic models + ABCs shared by every stage
   ingestion/     # PDF / Markdown / Text loaders
