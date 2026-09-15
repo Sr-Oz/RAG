@@ -44,7 +44,7 @@ Requires Python 3.10+ and a running [Ollama](https://ollama.com) instance.
 ```bash
 # 1. Install Ollama and pull the models this pipeline uses
 ollama pull nomic-embed-text
-ollama pull llama3.1
+ollama pull qwen2.5:3b
 
 # 2. Install the Python package
 python -m venv .venv && source .venv/bin/activate
@@ -86,7 +86,7 @@ loaded via `rag.config.Settings` (pydantic-settings). Key knobs:
 |---|---|---|
 | `RAG_OLLAMA_BASE_URL` | `http://localhost:11434` | Ollama server address |
 | `RAG_OLLAMA_EMBEDDING_MODEL` | `nomic-embed-text` | Embedding model |
-| `RAG_OLLAMA_GENERATION_MODEL` | `llama3.1` | Chat/generation model |
+| `RAG_OLLAMA_GENERATION_MODEL` | `qwen2.5:3b` | Chat/generation model |
 | `RAG_CHUNK_SIZE` / `RAG_CHUNK_OVERLAP` | `800` / `120` | Chunking window (chars) |
 | `RAG_CHROMA_PERSIST_DIR` | `./data/chroma` | Vector store location |
 | `RAG_RETRIEVAL_TOP_K` | `5` | Chunks returned per query |

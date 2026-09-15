@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     # Ollama connection
     ollama_base_url: str = Field(default="http://localhost:11434")
     ollama_embedding_model: str = Field(default="nomic-embed-text")
-    ollama_generation_model: str = Field(default="llama3.1")
+    ollama_generation_model: str = Field(default="qwen2.5:3b")
     ollama_request_timeout: float = Field(default=60.0)
     ollama_max_retries: int = Field(default=3)
 
